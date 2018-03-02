@@ -1,6 +1,7 @@
 <?php
 require __DIR__.'/view/header.php';
 require __DIR__.'/core/init.php';
+$tampil = database::getInstance();
  ?>
  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
    <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,16 +56,18 @@ require __DIR__.'/core/init.php';
      </nav>
 
 <?php if (@$_GET['page'] == "mahasiswa") { ?>
-
+      <?php
+        $mahasiswa = $tampil->SetTable('mahasiswa')->SetData()->all();
+       ?>
       <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
         <h1>Dashboard</h1>
-      </section>
         <div class="table-responsive col-sm-9 offset-sm- col-md-10 offset-md-1 pt-5">
           <table class="table table-striped">
             <thead class="thead-inverse">
               <tr>
                 <th>No</th>
-                <th>Nama</th>
+                <th>Nama Depan</th>
+                <th>Nama Belakang</th>
                 <th>Alamat</th>
                 <th>Tanggal Lahir</th>
                 <th colspan="2" class="text-center text-nowrap">Action</th>
@@ -72,10 +75,12 @@ require __DIR__.'/core/init.php';
             </thead>
             <tbody>
               <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>ggwp</td>
+                <?php foreach ($mahasiswa as $data_mahasiswa): ?>
+                <td><?php echo $data_mahasiswa->id ?></td>
+                <td><?php echo $data_mahasiswa->nama_depan ?></td>
+                <td><?php echo $data_mahasiswa->nama_belakang ?></td>
+                <td><?php echo $data_mahasiswa->alamat ?></td>
+                <td><?php echo $data_mahasiswa->tgl_lahir ?></td>
                 <td class="text-center text-nowrap">
                   <button type="button" class="btn btn-primary btn btn-default btn-xs"><span class="fa fa-pencil-square-o "></span>
                   </button>
@@ -84,6 +89,7 @@ require __DIR__.'/core/init.php';
                 </td>
               </tr>
               <tr>
+            <?php endforeach; ?>
             </tbody>
           </table>
         </div>
@@ -92,7 +98,7 @@ require __DIR__.'/core/init.php';
   </div>
 <?php } ?>
 <?php if (@$_GET['page'] == "jurusan") { ?>
-
+      <?php $jurusan = $tampil->SetTable('jurusan')->SetData()->all(); ?>
       <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
         <h1>Dashboard</h1>
       </section>
@@ -101,6 +107,7 @@ require __DIR__.'/core/init.php';
             <thead class="thead-inverse">
               <tr>
                 <th>No</th>
+                <th>Agama</th>
                 <th>Jurusan</th>
                 <th>Hobby</th>
                 <th>Ektrakulikuler</th>
@@ -109,10 +116,12 @@ require __DIR__.'/core/init.php';
             </thead>
             <tbody>
               <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>ggwp</td>
+                <?php foreach ($jurusan as $data_jurusan): ?>
+                <td><?= $data_jurusan->id ?></td>
+                <td><?= $data_jurusan->agama ?></td>
+                <td><?= $data_jurusan->jurusan ?></td>
+                <td><?= $data_jurusan->hobby ?></td>
+                <td><?= $data_jurusan->eskul ?></td>
                 <td class="text-center text-nowrap">
                   <button type="button" class="btn btn-primary btn btn-default btn-xs"><span class="fa fa-pencil-square-o "></span>
                   </button>
@@ -121,6 +130,7 @@ require __DIR__.'/core/init.php';
                 </td>
               </tr>
               <tr>
+            <?php endforeach; ?>
             </tbody>
           </table>
         </div>
@@ -129,7 +139,7 @@ require __DIR__.'/core/init.php';
   </div>
 <?php } ?>
 <?php if (@$_GET['page'] == "ta") { ?>
-
+        <?php $ta = $tampil->setTable('tahun_angkatan')->SetData()->all(); ?>
       <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
         <h1>Dashboard</h1>
       </section>
@@ -146,10 +156,11 @@ require __DIR__.'/core/init.php';
             </thead>
             <tbody>
               <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>ggwp</td>
+                <?php foreach ($ta as $key => $data_ta): ?>
+                <td><?= $data_ta->id ?></td>
+                <td><?= $data_ta->tahun_angkatan ?></td>
+                <td><?= $data_ta->kode_nama ?></td>
+                <td><?= $data_ta->email ?></td>
                 <td class="text-center text-nowrap">
                   <button type="button" class="btn btn-primary btn btn-default btn-xs"><span class="fa fa-pencil-square-o "></span>
                   </button>
@@ -158,6 +169,7 @@ require __DIR__.'/core/init.php';
                 </td>
               </tr>
               <tr>
+            <?php endforeach; ?>
             </tbody>
           </table>
         </div>

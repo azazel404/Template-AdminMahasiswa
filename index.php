@@ -1,6 +1,6 @@
 <?php require __DIR__.'/view/header.php' ?>
 
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-primary w3-shadow">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
