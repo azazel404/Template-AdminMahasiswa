@@ -101,7 +101,6 @@ class database{
       }
       $x =1;
       foreach($this->attr_data as $data){
-
         if ($x <= count($this->attr_data)) {
           $this->attr .= $data['bridge'];
         }

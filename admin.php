@@ -1,6 +1,9 @@
 <?php
 require __DIR__.'/view/header.php';
+require __DIR__.'/core/init.php';
+
  ?>
+ <body>
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
   <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -36,9 +39,9 @@ require __DIR__.'/view/header.php';
           <li>
             <a href="#nav-pegawai" data-toggle="collapse" aria-controls="nav-dokumen"><i class="fa fa-fw fa-archive"></i><span class="nav-label">Data List</span></a>
             <ul class="sidebar-nav-child collapse collapseable" id="nav-pegawai">
-              <li><a href="form-mahasiswa.php"><i class="fa fa-fw fa-user"></i><span class="nav-label">Mahasiswa</span></a></li>
-                <li><a href="form-jurusan.php"><i class="fa fa-fw fa-user"></i><span class="nav-label">Jurusan</span></a></li>
-                  <li><a href="form-ta.php"><i class="fa fa-fw fa-user"></i><span class="nav-label">Thn Angkatan</span></a></li>
+              <li><a href="form.php?page=mahasiswa"><i class="fa fa-fw fa-user"></i><span class="nav-label">Mahasiswa</span></a></li>
+                <li><a href="form.php?page=jurusan"><i class="fa fa-fw fa-user"></i><span class="nav-label">Jurusan</span></a></li>
+                  <li><a href="form.php?page=ta"><i class="fa fa-fw fa-user"></i><span class="nav-label">Thn Angkatan</span></a></li>
 
             </ul>
           <!-- </li>
@@ -52,8 +55,6 @@ require __DIR__.'/view/header.php';
       </ul>
 
     </nav>
-
-  <body>
 
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
           <h1>Dashboard</h1>

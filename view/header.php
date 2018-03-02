@@ -9,7 +9,7 @@
       <meta name="author" content="">
 
 
-      <title>Dashboard Template for Bootstrap</title>
+      <title>3D PRO</title>
 
       <!-- Bootstrap core CSS -->
       <link href="assets/css/bootstrap.min.css" rel="stylesheet">

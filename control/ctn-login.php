@@ -26,7 +26,7 @@ if ($validation->getPassed()) {
     $user = $test->setData('password')->first();
     $password = hash('sha256',Input::get('password'));
       if ($password == $user->password) {
-        header('location: index.php');
+        header('location: admin.php');
       }
       else{
           $errors[] = "Please Input username and password valid";
