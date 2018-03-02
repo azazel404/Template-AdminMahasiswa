@@ -30,10 +30,10 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <div class="form-group has-danger">
+                <div class="form-group ">
                     <label class="sr-only" for="username">username</label>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user""></i></div>
                         <input type="text" name="username" class="form-control" id="username"
                                placeholder="username"  autofocus>
                     </div>
@@ -46,7 +46,7 @@
                 <div class="form-group">
                     <label class="sr-only" for="email">Email</label>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
                         <input type="text" name="email" class="form-control" id="email"
                                placeholder="Email" >
                     </div>
