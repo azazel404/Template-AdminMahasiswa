@@ -19,14 +19,12 @@ $errors = [];
                   )
   ));
 
-  //jika saya kluarkan output password  dia kluar
-  // $user = $test->setData('password')->first();
-  // die($user->password);
+
 
 if ($validation->getPassed()) {
   if ($user = $test->setData()->where('username','=',Input::get('username'))->first()) {
-
-      $password = hash('sha256',Input::get('password'));
+    $user = $test->setData('password')->first();
+    $password = hash('sha256',Input::get('password'));
       if ($password == $user->password) {
         header('location: index.php');
       }
@@ -40,7 +38,7 @@ if ($validation->getPassed()) {
 }
 else{
   //sengaja asal karna dari tdi lari ke tempat else ini gak tau knpa mungkin grgr if test setdata nya kali , bingung gmna taro nya
-  $errors[] = 'saasdasd';
+  $errors[] = 'idk why errors shittt';
 }
 }
 

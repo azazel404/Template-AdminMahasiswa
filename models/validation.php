@@ -38,6 +38,8 @@ class validation{
           }
         }
       }
+      var_dump($this->_error);
+      exit();
       if (empty($this->_error)) {
         $this->_passed = true;
       }

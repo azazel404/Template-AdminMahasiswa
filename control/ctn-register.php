@@ -32,14 +32,16 @@ if (Input::get('register')) {
   if ($user = $test->setData()->where('username','=',Input::get('username'))->first()) {
     $errors[] = "username has been used";
   }
+
   else{
     if ($validation->getPassed()) {
-      $user = $test->createData([
-        'username' => Input::get('username'),
-        'email' => Input::get('email'),
-        'password' => hash('sha256',Input::get('password'))
-      ]);
-      header('Location: login.php');
+       $user = $test->createData([
+         'username' => Input::get('username'),
+         'email' => Input::get('email'),
+         'password' => hash('sha256',Input::get('password'))
+       ]);
+      
+       header('Location: login.php');
     }
     else{
       $errors = $validation->getError();
