@@ -1,6 +1,5 @@
 <?php
 require __DIR__.'/view/header.php';
-require __DIR__.'/core/init.php';
 require __DIR__.'/ctn/ctn-create.php';
  ?>
  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
