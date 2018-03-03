@@ -1,6 +1,5 @@
 <?php
 
-
 class Input{
 
   public static function get($name){

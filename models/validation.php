@@ -1,5 +1,4 @@
 <?php
-
 class validation{
 
   private $_passed = false,

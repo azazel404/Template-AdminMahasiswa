@@ -1,5 +1,4 @@
 <?php
-
 class database{
 
   //untuk instance design pattern
@@ -130,24 +129,24 @@ class database{
 
     }
 
-    public function updateData($field = array())
-    {
-      $col ='';
+    public function updateData($fields = array()){
+      $col = '';
       $x = 1;
-      $data_count_param = count($this->param);
-      foreach ($field as $fields => $data) {
-        $this->param[] = $data;
-        $col .= $key.'=?';
+      $count = count($this->param);
+      foreach ($fields as $key => $value) {
+        $this->param[] = $value;
+        $col .= $key .'=?';
 
-        if ($x < count($field)) {
-          $value = ', ';
-        }
-        $x++;
+          if ($x < count($fields)) {
+            $col .= ', ';
+          }
+          $x++;
       }
-      //membuat array dari belakang menjadi kedepan
-      for ($i=0; $i < count($data_count_param) ; $i++) {
+      //memindahkan array yang dipertama menjadi diakhir
+      for ($i=0; $i < count($count) ; $i++) {
         $this->param[] = array_shift($this->param);
       }
+
       $this->query = "UPDATE $this->table SET $col WHERE";
       $this->run();
     }

@@ -1,6 +1,7 @@
 <?php
 require_once "core/init.php";
 
+
 $test = database::getInstance();
 if (Input::get('login')) {
 

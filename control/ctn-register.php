@@ -40,7 +40,7 @@ if (Input::get('register')) {
          'email' => Input::get('email'),
          'password' => hash('sha256',Input::get('password'))
        ]);
-      
+
        header('Location: login.php');
     }
     else{
