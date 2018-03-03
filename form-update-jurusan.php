@@ -1,10 +1,7 @@
 <?php
 require __DIR__.'/view/admin-header.php';
 require __DIR__.'/models/database.php';
-require __DIR__.'/models/session.php';
-if (!session::exists('username')) {
-  header('Location: login.php');
-}
+
 $getdata = database::getInstance();
  ?>
           <?php if (@$_GET['id']) { ?>

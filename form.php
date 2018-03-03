@@ -1,10 +1,6 @@
 <?php
 require __DIR__.'/view/admin-header.php';
 require_once "models/database.php";
-require_once "models/session.php";
-if (!session::exists('username')) {
-  header('Location: login.php');
-}
 
 $getdata = database::getInstance();
  ?>
@@ -40,12 +36,14 @@ $getdata = database::getInstance();
                   <td><?php echo $data_mahasiswa->kota ?></td>
                     <td><?php echo $data_mahasiswa->provinsi ?></td>
                 <td class="text-center text-nowrap">
+                  <a href="form-update-mahasiswa.php?id=<?php echo $data_mahasiswa->id ?>">
                   <button type="button" class="btn btn-primary btn btn-default btn-xs">
-                    <a href="form-update-mahasiswa.php?id=<?php echo $data_mahasiswa->id ?>"><span class="fa fa-pencil-square-o"></span></a>
-                  </button>
+                  <span class=" fa fa-pencil-square-o"></span>
+                  </button></a>
+                  <a href="crud/delete-mahasiswa.php?id=<?php echo $data_mahasiswa->id ?>">
                 <button type="button" class="btn btn-primary btn btn-default btn-xs">
-                  <a href="crud/delete-mahasiswa.php?id=<?php echo $data_mahasiswa->id ?>"><span class="fa fa-trash"></span></a>
-                </button>
+                  <span class="fa fa-trash"></span>
+                </button></a>
                 </td>
               </tr>
               <tr>
@@ -83,12 +81,14 @@ $getdata = database::getInstance();
                 <td><?= $data_jurusan->hobby ?></td>
                 <td><?= $data_jurusan->eskul ?></td>
                 <td class="text-center text-nowrap">
+                  <a href="form-update-jurusan.php?id=<?php echo $data_jurusan->id ?>">
                   <button type="button" class="btn btn-primary btn btn-default btn-xs">
-                    <a href="form-update-jurusan.php?id=<?php echo $data_jurusan->id ?>"><span class="fa fa-pencil-square-o"></span></a>
-                  </button>
+                    <span class="fa fa-pencil-square-o"></span>
+                  </button></a>
+                  <a href="crud/delete-jurusan.php?id=<?php echo $data_jurusan->id ?>">
                 <button type="button" class="btn btn-primary btn btn-default btn-xs">
-                  <a href="crud/delete-jurusan.php?id=<?php echo $data_jurusan->id ?>"><span class="fa fa-trash"></span></a>
-                </button>
+                  <span class="fa fa-trash"></span>
+                </button></a>
                 </td>
               </tr>
               <tr>
@@ -124,12 +124,14 @@ $getdata = database::getInstance();
                   <td><?= $data_ta->kode_nama ?></td>
                   <td><?= $data_ta->email ?></td>
                   <td class="text-center text-nowrap">
+                    <a href="form-update-ta.php?id=<?php echo $data_ta->id ?>">
                     <button type="button" class="btn btn-primary btn btn-default btn-xs">
-                    <a href="form-update-ta.php?id=<?php echo $data_ta->id ?>"><span class="fa fa-pencil-square-o"></span></a>
-                    </button>
+                    <span class="fa fa-pencil-square-o"></span>
+                    </button></a>
+                    <a href="crud/delete-jurusan.php?id=<?php echo $data_ta->id ?>">
                   <button type="button" class="btn btn-primary btn btn-default btn-xs">
-                    <a href="crud/delete-jurusan.php?id=<?php echo $data_ta->id ?>"><span class="fa fa-trash"></span></a>
-                  </button>
+                    <span class="fa fa-trash"></span>
+                  </button></a>
                   </td>
                 </tr>
                 <tr>
