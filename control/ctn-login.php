@@ -27,6 +27,7 @@ if ($validation->getPassed()) {
     $user = $test->setData('password')->first();
     $password = hash('sha256',Input::get('password'));
       if ($password == $user->password) {
+        session::set('username',Input::get('username'));
         header('location: admin.php');
       }
       else{

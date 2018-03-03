@@ -1,6 +1,10 @@
 <?php
 require __DIR__.'/view/admin-header.php';
 require __DIR__.'/models/database.php';
+require __DIR__.'/models/session.php';
+if (!session::exists('username')) {
+  header('Location: login.php');
+}
 $getdata = database::getInstance();
  ?>
 
@@ -10,6 +14,7 @@ $getdata = database::getInstance();
               <h1>Edit Form Mahasiswa</h1>
           <?php $mahasiswa = $getdata->setTable('mahasiswa')->SetData()->first(); ?>
                   <form class="offset-md-1 pt-3" method="POST" action="crud/update-mahasiswa.php">
+                         <input type="hidden" name="id" value="<?php echo $mahasiswa->id ?>" />
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="namadepan">Nama Depan</label>

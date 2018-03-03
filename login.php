@@ -56,6 +56,7 @@
         <div class="row" style="padding-top: 1rem">
             <div class="col-md-3"></div>
             <div class="col-md-6">
+              <input type="hidden" name="token" value="<?php echo token::generate(); ?>">
               <input type="submit" name="login" value="Login" class="btn btn-primary btn-block">
             </div>
         </div>
@@ -63,11 +64,6 @@
             <div class="col-md-3"></div>
             <div class="col-md-6" style="padding-top: .35rem">
                 <div class="form-check mb-2 mr-sm-2 mb-sm-0">
-                    <label class="form-check-label">
-                        <input class="form-check-input" name="remember"
-                               type="checkbox" >
-                        <span style="padding-bottom: .15rem">Remember me</span>
-                    </label>
                     <a class="btn btn-link" href="register.php">Register Here</a>
                     <span>or</span>
                     <a class="btn btn-link" href="">Forgot Your Password?</a>

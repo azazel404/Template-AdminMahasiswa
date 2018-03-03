@@ -1,6 +1,10 @@
 <?php
 require __DIR__.'/view/header.php';
-require __DIR__.'/ctn/ctn-create.php';
+require __DIR__.'/crud/ctn-create.php';
+require __DIR__.'/models/session.php';
+if (!session::exists('username')) {
+  header('Location: login.php');
+}
  ?>
  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
    <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -335,7 +339,7 @@ require __DIR__.'/ctn/ctn-create.php';
                    <option value="ZW">Zimbabwe</option>
                    </select>
                  </div>
-              <button type="submit" class="btn btn-primary col-md-6" name="createmahasiswa">Create Data</button>
+                 <input type="submit" name="createmahasiswa" value="Create" class="btn btn-primary col-md-6">
              </form>
            </main>
      <?php } ?>
@@ -363,7 +367,7 @@ require __DIR__.'/ctn/ctn-create.php';
                  <label for="eskul">Esktrakulikuler</label>
                  <input type="text" class="form-control" id="eskul" name="eskul">
                </div>
-             <button type="submit" class="btn btn-primary  col-md-6" name="createjurusan">Create Data</button>
+             <input type="submit" name="createjurusan" value="Create" class="btn btn-primary col-md-6">
            </form>
            </main>
      <?php } ?>
@@ -387,7 +391,7 @@ require __DIR__.'/ctn/ctn-create.php';
              <label for="email">Email</label>
              <input type="text" class="form-control" id="email" name="email">
            </div>
-         <button type="submit" class="btn btn-primary  col-md-6" name="createta">Create Data</button>
+            <input type="submit" name="createta" value="Create" class="btn btn-primary col-md-6">
        </form>
        </main>
      <?php } ?>

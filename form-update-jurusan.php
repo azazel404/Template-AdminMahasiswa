@@ -1,6 +1,10 @@
 <?php
 require __DIR__.'/view/admin-header.php';
 require __DIR__.'/models/database.php';
+require __DIR__.'/models/session.php';
+if (!session::exists('username')) {
+  header('Location: login.php');
+}
 $getdata = database::getInstance();
  ?>
           <?php if (@$_GET['id']) { ?>
@@ -9,6 +13,7 @@ $getdata = database::getInstance();
               <h1>Edit Form Jurusan</h1>
               <?php $jurusan = $getdata->setTable('jurusan')->SetData()->first(); ?>
             <form class=" offset-md-1 pt-3" action="crud/update-jurusan.php" method="POST">
+                   <input type="hidden" name="id" value="<?php echo $jurusan->id ?>" />
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="agama">Agama</label>

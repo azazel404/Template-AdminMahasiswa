@@ -1,7 +1,9 @@
 <?php
 require __DIR__.'/view/header.php';
 require __DIR__.'/core/init.php';
-
+if (!session::exists('username')) {
+  header('Location: login.php');
+}
  ?>
  <body>
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
@@ -63,16 +65,16 @@ require __DIR__.'/core/init.php';
             <div class="col-6 col-sm-3 placeholder">
               <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
 
-              <div class="text-muted"><a href="form-mahasiswa.php">Mahasiswa</a></div>
+              <div class="text-muted"><a href="form.php?page=mahasiswa">Mahasiswa</a></div>
             </div>
             <div class="col-6 col-sm-3 placeholder">
               <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                <div class="text-muted"><a href="form-jurusan.php">Jurusan</a></div>
+                <div class="text-muted"><a href="form.php?page=jurusan">Jurusan</a></div>
             </div>
             <div class="col-6 col-sm-3 placeholder">
               <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
 
-              <div class="text-muted"><a href="form-ta.php">Tahun Angkatan</a></div>
+              <div class="text-muted"><a href="form.php?page=ta">Tahun Angkatan</a></div>
             </div>
           </section>
 

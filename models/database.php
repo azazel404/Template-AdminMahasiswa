@@ -166,9 +166,9 @@ class database{
 
     public function run(){
       try {
-        // var_dump($this->param);
+        var_dump($this->param);
         // die($this->query ." ". $this->attr);
-        // // die($this->attr);
+        // die($this->attr);
         $this->stmt = $this->conn->prepare($this->query .' '.$this->attr);
         $this->stmt->execute($this->param);
         $this->endflush();

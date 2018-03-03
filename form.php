@@ -1,6 +1,10 @@
 <?php
 require __DIR__.'/view/admin-header.php';
 require_once "models/database.php";
+require_once "models/session.php";
+if (!session::exists('username')) {
+  header('Location: login.php');
+}
 
 $getdata = database::getInstance();
  ?>
@@ -121,7 +125,7 @@ $getdata = database::getInstance();
                   <td><?= $data_ta->email ?></td>
                   <td class="text-center text-nowrap">
                     <button type="button" class="btn btn-primary btn btn-default btn-xs">
-                    <a href="form-update-ta.php?id=<?php echo $data_ta->id ?>=ta"><span class="fa fa-pencil-square-o"></span></a>
+                    <a href="form-update-ta.php?id=<?php echo $data_ta->id ?>"><span class="fa fa-pencil-square-o"></span></a>
                     </button>
                   <button type="button" class="btn btn-primary btn btn-default btn-xs">
                     <a href="crud/delete-jurusan.php?id=<?php echo $data_ta->id ?>"><span class="fa fa-trash"></span></a>

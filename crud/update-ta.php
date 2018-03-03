@@ -2,7 +2,7 @@
 require_once "../models/database.php";
 require_once "../models/Input.php";
 
-if (Input::get('updatata')) {
+if (Input::get('updatethn')) {
   $id = Input::get('id');
   $getdata = database::getInstance();
   $getdata->setTable('tahun_angkatan');

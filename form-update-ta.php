@@ -1,6 +1,10 @@
 <?php
 require __DIR__.'/view/admin-header.php';
 require __DIR__.'/models/database.php';
+require __DIR__.'/models/session.php';
+if (!session::exists('username')) {
+  header('Location: login.php');
+}
 $getdata = database::getInstance();
  ?>
  <?php if (@$_GET['id']) { ?>
@@ -8,7 +12,8 @@ $getdata = database::getInstance();
    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
      <h1>Edit Form tahun angkatan</h1>
      <?php $thn_angkatan= $getdata->setTable('tahun_angkatan')->SetData()->first(); ?>
-   <<form class=" offset-md-1 pt-3" action="" method="POST">
+   <form class=" offset-md-1 pt-3" action="crud/update-ta.php" method="POST">
+          <input type="hidden" name="id" value="<?php echo $thn_angkatan->id ?>" />
    <div class="form-row">
      <div class="form-group col-md-6">
        <label for="tahun_angkatan">Tahun Angkatan</label>
@@ -25,7 +30,7 @@ $getdata = database::getInstance();
        <input type="text" class="form-control" id="email" name="email" value="<?= $thn_angkatan->email ?>">
      </div>
    <!-- <button type="submit" class="btn btn-primary  col-md-6" name="createta">Create Data</button> -->
-   <input type="submit" name="updateta" value="Create" class="btn btn-primary col-md-6">
+   <input type="submit" name="updatethn" value="Update" class="btn btn-primary col-md-6">
  </form>
  </main>
  <?php } ?>
