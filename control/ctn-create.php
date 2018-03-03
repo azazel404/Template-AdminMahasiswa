@@ -1,7 +1,6 @@
 <?php
 require_once "core/init.php";
 
-$getdata = database::getInstance();
 
 if (Input::get('createmahasiswa')) {
 
@@ -40,7 +39,6 @@ if (Input::get('createta')) {
                    'max'     => 20
                 )
     ));
-
     if ($validation->getPassed()) {
 
         $getdata->setTable('tahun_angkatan');

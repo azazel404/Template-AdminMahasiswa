@@ -1,7 +1,7 @@
 <?php
 require __DIR__.'/view/header.php';
 require __DIR__.'/core/init.php';
-$tampil = database::getInstance();
+
  ?>
  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
    <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,7 +57,7 @@ $tampil = database::getInstance();
 
 <?php if (@$_GET['page'] == "mahasiswa") { ?>
       <?php
-        $mahasiswa = $tampil->SetTable('mahasiswa')->SetData()->all();
+        $mahasiswa = $getdata->SetTable('mahasiswa')->SetData()->all();
        ?>
       <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
         <h1>Dashboard</h1>
@@ -98,7 +98,7 @@ $tampil = database::getInstance();
   </div>
 <?php } ?>
 <?php if (@$_GET['page'] == "jurusan") { ?>
-      <?php $jurusan = $tampil->SetTable('jurusan')->SetData()->all(); ?>
+      <?php $jurusan = $getdata->SetTable('jurusan')->SetData()->all(); ?>
       <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
         <h1>Dashboard</h1>
       </section>
@@ -139,7 +139,7 @@ $tampil = database::getInstance();
   </div>
 <?php } ?>
 <?php if (@$_GET['page'] == "ta") { ?>
-        <?php $ta = $tampil->setTable('tahun_angkatan')->SetData()->all(); ?>
+        <?php $ta = $getdata->setTable('tahun_angkatan')->SetData()->all(); ?>
       <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
         <h1>Dashboard</h1>
       </section>

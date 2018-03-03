@@ -1,7 +1,6 @@
 <?php
 require __DIR__.'/view/header.php';
 require __DIR__.'/core/init.php';
-require __DIR__.'/control/ctn-create.php';
  ?>
  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
    <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +58,7 @@ require __DIR__.'/control/ctn-create.php';
 
        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
          <h1>Dashboard</h1>
-             <form class="offset-md-1 pt-3" method="post" action="form-create.php?mahasiswa=add">
+             <form class="offset-md-1 pt-3" method="POST" action="">
                <div class="form-row">
                  <div class="form-group col-md-6">
                    <label for="namadepan">Nama Depan</label>
@@ -344,7 +343,7 @@ require __DIR__.'/control/ctn-create.php';
 
            <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
              <h1>Dashboard</h1>
-             <form class=" offset-md-1 pt-3" action="form-create.php" method="post">
+             <form class=" offset-md-1 pt-3" action="" method="POST">
              <div class="form-row">
                <div class="form-group col-md-6">
                  <label for="agama">Agama</label>
@@ -372,7 +371,7 @@ require __DIR__.'/control/ctn-create.php';
 
        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
          <h1>Dashboard</h1>
-         <form class=" offset-md-1 pt-3" action="form-create.php?ta=add" method="post">
+         <form class=" offset-md-1 pt-3" action="" method="POST">
          <div class="form-row">
            <div class="form-group col-md-6">
              <label for="tahun_angkatan">Tahun Angkatan</label>
